@@ -15,7 +15,7 @@ SSH into the spark cluster.  Note, "spark-cluster" corresponds to the argument g
 
     ./spark-ec2 -k <awskeypair> -i <folder>/<awskeypair>.pem login spark-cluster 
 
-Write a file to HDFS.  Run from either /root/ephemeral-hdfs/bin or from /root/permanant-hdfs/bin on the driver.  First argument of put is the regular filesystem path, and the second is the HDFS path and fileame.
+Write a file to HDFS.  Run from either /root/ephemeral-hdfs/bin or from /root/persistent-hdfs/bin on the driver.  First argument of put is the regular filesystem path, and the second is the HDFS path and fileame.
 
     ./hadoop fs -mkdir /user/ben
     ./hadoop fs -put /root/spark/README.md /user/ben/readme.txt
