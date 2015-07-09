@@ -31,7 +31,7 @@ Create a user to log into RStudio with and create a password.  A spark troublesh
     useradd <yourusername>
     passwd <yourusername>
 
-Spark can create many open files during the shuffle step, exceeding the typical OS defaults for a user.  This changes that limit.
+Spark can create many open files during the shuffle step, exceeding the typical OS defaults for a user.  This changes that limit.  <a href="http://askubuntu.com/questions/162229/how-do-i-increase-the-open-files-limit-for-a-non-root-user">more</a>
 
 Check the max available:
 
