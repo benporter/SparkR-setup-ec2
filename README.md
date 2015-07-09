@@ -1,6 +1,8 @@
 # SparkR-setup-ec2
 Commands needed to setup up SparkR using the EC2 scripts
 
+Background:  this builds on the <a href="http://spark.apache.org/docs/latest/ec2-scripts.html">Running Spark on EC2</a> instructions, including additional commands for getting SparkR up and running. 
+
 Start a Spark Cluster
 
 To spin up a Spark Cluster, run the following from the SPARK_HOME folder.  Replace <> with the location and name of the AWS keys.  This launches 1 driver and 1 worker, both running on <a href="http://aws.amazon.com/ec2/pricing/">r3.large</a> boxes, and names the cluster "spark-cluster".  It also creates an AWS security group for the driver and workers with that prefix if it does not already exist.
@@ -13,7 +15,7 @@ Destroy a spark cluster.  Note, "spark-cluster" corresponds to the argument give
 
 SSH into the spark cluster.  Note, "spark-cluster" corresponds to the argument given to launch when initializing the cluster.
 
-    ./spark-ec2 -k <awskeypair> -i <folder>/<awskeypair>.pem login spark-cluster 
+    ./spark-ec2 -k <awskeypair> -i /<folder>/<awskeypair>.pem login spark-cluster 
 
 Write a file to HDFS.  Run from either /root/ephemeral-hdfs/bin or from /root/persistent-hdfs/bin on the driver.  First argument of put is the regular filesystem path, and the second is the HDFS path and fileame.
 
