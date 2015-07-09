@@ -20,3 +20,13 @@ Write a file to HDFS.  Run from either /root/ephemeral-hdfs/bin or from /root/pe
     ./hadoop fs -mkdir /user/ben
     ./hadoop fs -put /root/spark/README.md /user/ben/readme.txt
     ./hadoop fs -ls /user/ben
+
+Install <a href="https://www.rstudio.com/products/rstudio/download-server/">RStudio</a> on the Amazon Linux driver. R already installed by default on the AMI they used to create the spark cluster.  Access RStudio via http://<driver url>:8787 
+
+    wget https://download2.rstudio.org/rstudio-server-rhel-0.99.451-x86_64.rpm
+    sudo yum install --nogpgcheck rstudio-server-rhel-0.99.451-x86_64.rpm
+
+Create a user to log into RStudio with and create a password.  A spark troubleshooting forum question that I can't find a link to claimed that the username that logs into RStudio on the box should be the same username as the one that created the spark cluster from the local machine.  I haven't verified this claim.
+
+    useradd <yourusername>
+    passwd <yourusername>
