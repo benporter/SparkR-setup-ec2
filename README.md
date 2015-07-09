@@ -46,3 +46,17 @@ Change the number of allowed open files
     ulimit -n <max from previous step>
     
 TO DO:  find the config file to remove the ulimit setting change.
+
+RStudio Config
+
+From within RStudio on the driver.
+
+    # load the library, from where Spark is installed
+    library("SparkR", lib.loc="/root/spark/R/lib")
+    
+    #define the Spark home
+    Sys.setenv(SPARK_HOME="/root/spark")
+    
+    #initialize Spark as LOCAL from the driver
+    sc <- sparkR.init("local[*]", "SparkR") 
+
