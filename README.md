@@ -30,3 +30,19 @@ Create a user to log into RStudio with and create a password.  A spark troublesh
 
     useradd <yourusername>
     passwd <yourusername>
+
+Spark can create many open files during the shuffle step, exceeding the typical OS defaults for a user.  This changes that limit.
+
+Check the max available:
+
+    cat /proc/sys/fs/file-max
+
+View the number of allowed open files for the user that is logged in
+
+    ulimit -n
+    
+Change the number of allowed open files
+
+    ulimit -n <max from previous step>
+    
+TO DO:  find the config file to remove the ulimit setting change.
