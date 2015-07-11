@@ -15,7 +15,7 @@ Stop (not destroy) a spark cluster
     
 Restart a stopped spark cluster
 
-    ./spark-ec2 -i <key-file> --region=us-east-1 start spark-cluster
+    ./spark-ec2 -i <folder>/<awskeypair>.pem --region=us-east-1 start spark-cluster
 
 Destroy a spark cluster.  Note, "spark-cluster" corresponds to the argument given to launch when initializing the cluster.
 
