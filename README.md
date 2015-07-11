@@ -9,11 +9,11 @@ To spin up a Spark Cluster, run the following from the SPARK_HOME folder.  Repla
 
     ./spark-ec2 --key-pair=<awskeypair> --identity-file=<folder>/<awskeypair>.pem --region=us-east-1 --zone=us-east-1a --instance-type=r3.large --slaves=1 launch spark-cluster
 
-Stop (not destroy) a spark cluster
+Stop (not destroy) a spark cluster (hostname is lost)
 
     ./spark-ec2 --region=us-east-1 stop spark-cluster
     
-Restart a stopped spark cluster
+Restart a stopped spark cluster (be aware of the new hostname)
 
     ./spark-ec2 -i <folder>/<awskeypair>.pem --region=us-east-1 start spark-cluster
 
